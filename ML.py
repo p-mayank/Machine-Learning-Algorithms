@@ -55,11 +55,8 @@ print("Total number of nodes in the tree: "+str(dtr.tree_.node_count))
 
 #No. of leaf nodes
 leaf_boolean = dtr.tree_.children_left == -1
-ct=0
-for k in leaf_boolean:
-    if(k==True):
-        ct+=1
-print("Number of leaf nodes: "+str(ct))
+ct=[k for k in leaf_boolean if k]
+print("Number of leaf nodes: "+str(len(ct)))
 
 #Mean Square Error
 from sklearn.metrics import mean_squared_error
